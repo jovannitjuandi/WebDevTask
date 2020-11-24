@@ -4,9 +4,37 @@
 * {
 	margin: 0;
 	padding: 0;
+	/*overflow: hidden;*/
 }
 
 #start-button {
-	
-	color: aqua;
+	background: #FF8900;
+	color: white;
+	padding: 0 10px;
+}
+
+image {
+	width: 100%;
+}
+
+.left {
+	background: red;
+}
+
+.mid {
+	background: green;
+}
+
+.right {
+	background: blue;
+}
+
+.body-background {
+	background-image: url("../IMG/background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.suburb-heading {
+	color: white;
 }
