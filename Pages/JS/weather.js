@@ -38,6 +38,30 @@ class Weather extends React.Component {
 		}
 	}
 	
+	displayCurrentInfo() {
+		if (this.state.datas[this.state.currentID].refreshed) {
+		return (
+		<div><div class="row" id="current-weather">	
+			<div class="col-sm-12">
+				<h1>{this.state.datas[this.state.currentID].current}<span>&#176;</span></h1>
+			</div>
+		</div>
+		<div class="row d-flex justify-content-center" id="current-weather">	
+			<div class="col-sm-4">
+				<h2>{this.state.datas[this.state.currentID].low}<span>&#176;</span></h2>
+			</div>
+			<div class="col-sm-4">
+				<h2>{this.state.datas[this.state.currentID].high}<span>&#176;</span></h2>
+			</div>
+		</div>
+		<div class="row" id="current-weather">	
+			<div class="col-sm-12">
+				<h1>{this.state.datas[this.state.currentID].weather}</h1>
+			</div>
+		</div></div>
+		)}
+	}
+	
 	render() {
 		return (
 		<div><div class="row">
@@ -49,11 +73,13 @@ class Weather extends React.Component {
 			</div>
 			<div class="col-sm-4 mid d-flex justify-content-center align-items-center" id="stage2-middle">
 					<img src={"IMG/".concat(this.selectWeatherImage(), ".png")} class="img-fluid" onClick = {this.handleRefreshClick.bind(this)}/>
-					</div>
+			</div>
 			<div class="col-sm-4 right d-flex justify-content-center align-items-center" id="stage2-right">
 				<img src="IMG/rightArrow.png" class="img-fluid" onClick = {this.handleRightClick.bind(this)}/>
 			</div>
-		</div></div>
+		</div>
+			{this.displayCurrentInfo()}
+		</div>
 		);
 	}
 
