@@ -38,3 +38,8 @@ image {
 .suburb-heading {
 	color: white;
 }
+
+#suburb-heading {
+	text-align: center;
+	color: white;
+}
