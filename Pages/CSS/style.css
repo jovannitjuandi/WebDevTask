@@ -17,18 +17,6 @@ image {
 	width: 100%;
 }
 
-.left {
-	background: red;
-}
-
-.mid {
-	background: green;
-}
-
-.right {
-	background: blue;
-}
-
 .body-background {
 	background-image: url("../IMG/background.jpg");
 	background-repeat: no-repeat;

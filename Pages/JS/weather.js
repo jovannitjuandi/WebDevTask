@@ -10,7 +10,7 @@ class Weather extends React.Component {
 				low: 16,
 				current: 18,
 				high: 20,
-			 	weather: 'Light Rain',
+			 	weather: 'Rainy',
 				refreshed: 0
 			}, {id: 1,
 				name: 'Melbourne',
@@ -24,12 +24,20 @@ class Weather extends React.Component {
 				low: 16,
 				current: 18,
 				high: 20,
-				weather: 'Light Rain',
+				weather: 'Thundershowers',
 				refreshed: 0
 			}]
 		}
 	}
 
+	selectWeatherImage() {
+		if (this.state.datas[this.state.currentID].refreshed == 1) {
+			return this.state.datas[this.state.currentID].weather;
+		} else {
+			return "refresh";
+		}
+	}
+	
 	render() {
 		return (
 		<div><div class="row">
@@ -40,7 +48,7 @@ class Weather extends React.Component {
 				<img src="IMG/leftArrow.png" class="img-fluid" onClick = {this.handleLeftClick.bind(this)}/>
 			</div>
 			<div class="col-sm-4 mid d-flex justify-content-center align-items-center" id="stage2-middle">
-					<img src="IMG/refresh.png" class="img-fluid" onClick = {this.handleRefreshClick.bind(this)}/>
+					<img src={"IMG/".concat(this.selectWeatherImage(), ".png")} class="img-fluid" onClick = {this.handleRefreshClick.bind(this)}/>
 					</div>
 			<div class="col-sm-4 right d-flex justify-content-center align-items-center" id="stage2-right">
 				<img src="IMG/rightArrow.png" class="img-fluid" onClick = {this.handleRightClick.bind(this)}/>
@@ -98,5 +106,5 @@ class Weather extends React.Component {
 				]
 			});
 		}
-		}
+	}
 }
